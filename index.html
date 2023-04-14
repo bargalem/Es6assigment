@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Class</title>
+</head>
+<body>
+
+    <p id="name"></p>
+    <script>
+        class Person{
+            constructor(firstName,lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+}
+            //defining method
+            msg(){
+            console.log(`Hi... ${this.firstName} ${this.lastName}`);
+}
+}
+class address extends Person{
+    constructor(firstName,lastName,address){
+        super(firstName,lastName)
+        this.address=address;
+    }
+    fullName(){
+        console.log(`Hello... My self ${this.firstName} ${this.lastName}. i am in ${this.address}`)
+    }
+}
+
+//creating object of Person class
+        let persone1=new Person('Madhuri',"bargale");
+
+
+        //accessing property
+         console.log(persone1.firstName);
+
+         //accessing method
+         persone1.msg();
+
+
+
+
+//access child class ,inherite class
+let persone2=new address('Madhuri',"bargale","jaysingpur");
+       //accessing property
+       console.log(persone2);
+
+       //accessing method
+       persone2.fullName();
+       
+
+
+         let para=document.getElementById("name")
+         para.innerText="My Name is "+ persone2.firstName+" "+persone2.lastName+" i am in " + persone2.address;
+
+
+    </script>
+</body>
+</html>
